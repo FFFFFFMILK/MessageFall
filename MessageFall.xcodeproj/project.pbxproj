@@ -13,6 +13,10 @@
 		87F39D371F27940F008DDAEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F39D351F27940F008DDAEC /* Main.storyboard */; };
 		87F39D391F27940F008DDAEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87F39D381F27940F008DDAEC /* Assets.xcassets */; };
 		87F39D3C1F27940F008DDAEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F39D3A1F27940F008DDAEC /* LaunchScreen.storyboard */; };
+		87F39D481F279969008DDAEC /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F39D471F279969008DDAEC /* MessageModel.m */; };
+		87F39D4A1F279A29008DDAEC /* statuses.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87F39D491F279A29008DDAEC /* statuses.plist */; };
+		87F39D4D1F279D8E008DDAEC /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F39D4C1F279D8E008DDAEC /* MessageCell.m */; };
+		87F39D501F2A26B8008DDAEC /* MessageFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F39D4F1F2A26B8008DDAEC /* MessageFrameModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,13 @@
 		87F39D381F27940F008DDAEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87F39D3B1F27940F008DDAEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87F39D3D1F27940F008DDAEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87F39D461F279969008DDAEC /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		87F39D471F279969008DDAEC /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
+		87F39D491F279A29008DDAEC /* statuses.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = statuses.plist; sourceTree = "<group>"; };
+		87F39D4B1F279D8E008DDAEC /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
+		87F39D4C1F279D8E008DDAEC /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
+		87F39D4E1F2A26B8008DDAEC /* MessageFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageFrameModel.h; sourceTree = "<group>"; };
+		87F39D4F1F2A26B8008DDAEC /* MessageFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageFrameModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +69,11 @@
 		87F39D2B1F27940F008DDAEC /* MessageFall */ = {
 			isa = PBXGroup;
 			children = (
+				87F39D451F279944008DDAEC /* Controller */,
+				87F39D441F27993D008DDAEC /* Model */,
+				87F39D431F279932008DDAEC /* View */,
 				87F39D2F1F27940F008DDAEC /* AppDelegate.h */,
 				87F39D301F27940F008DDAEC /* AppDelegate.m */,
-				87F39D321F27940F008DDAEC /* ViewController.h */,
-				87F39D331F27940F008DDAEC /* ViewController.m */,
-				87F39D351F27940F008DDAEC /* Main.storyboard */,
-				87F39D381F27940F008DDAEC /* Assets.xcassets */,
-				87F39D3A1F27940F008DDAEC /* LaunchScreen.storyboard */,
-				87F39D3D1F27940F008DDAEC /* Info.plist */,
 				87F39D2C1F27940F008DDAEC /* Supporting Files */,
 			);
 			path = MessageFall;
@@ -74,9 +82,43 @@
 		87F39D2C1F27940F008DDAEC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				87F39D351F27940F008DDAEC /* Main.storyboard */,
+				87F39D381F27940F008DDAEC /* Assets.xcassets */,
+				87F39D3A1F27940F008DDAEC /* LaunchScreen.storyboard */,
+				87F39D3D1F27940F008DDAEC /* Info.plist */,
 				87F39D2D1F27940F008DDAEC /* main.m */,
+				87F39D491F279A29008DDAEC /* statuses.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		87F39D431F279932008DDAEC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87F39D4B1F279D8E008DDAEC /* MessageCell.h */,
+				87F39D4C1F279D8E008DDAEC /* MessageCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		87F39D441F27993D008DDAEC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87F39D461F279969008DDAEC /* MessageModel.h */,
+				87F39D471F279969008DDAEC /* MessageModel.m */,
+				87F39D4E1F2A26B8008DDAEC /* MessageFrameModel.h */,
+				87F39D4F1F2A26B8008DDAEC /* MessageFrameModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		87F39D451F279944008DDAEC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				87F39D321F27940F008DDAEC /* ViewController.h */,
+				87F39D331F27940F008DDAEC /* ViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +180,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87F39D4A1F279A29008DDAEC /* statuses.plist in Resources */,
 				87F39D3C1F27940F008DDAEC /* LaunchScreen.storyboard in Resources */,
 				87F39D391F27940F008DDAEC /* Assets.xcassets in Resources */,
 				87F39D371F27940F008DDAEC /* Main.storyboard in Resources */,
@@ -151,9 +194,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87F39D4D1F279D8E008DDAEC /* MessageCell.m in Sources */,
 				87F39D341F27940F008DDAEC /* ViewController.m in Sources */,
 				87F39D311F27940F008DDAEC /* AppDelegate.m in Sources */,
+				87F39D501F2A26B8008DDAEC /* MessageFrameModel.m in Sources */,
 				87F39D2E1F27940F008DDAEC /* main.m in Sources */,
+				87F39D481F279969008DDAEC /* MessageModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
