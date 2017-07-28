@@ -27,7 +27,7 @@ itcast 教程，简易微博布局：可变高度cell，frameModel 的使用
    - MaxSize：MAXFLOAT 代表的是浮点数的最大值，如此设置代表文本的宽度和高度都是可变的，文本框根据内容而变。
    - NSStringDrawingUsesLineFragmentOrigin：
 
-查看源码：
+	查看源码：
 
      typedef NS_OPTIONS(NSInteger, NSStringDrawingOptions) {
         NSStringDrawingUsesLineFragmentOrigin = 1 << 0, // The specified origin is the line fragment origin, not the base line origin
@@ -43,13 +43,11 @@ itcast 教程，简易微博布局：可变高度cell，frameModel 的使用
     - (CGRect)boundingRectWithSize:(CGSize)size options:(NSStringDrawingOptions)options attributes:(nullable NSDictionary<NSString *, id> *)attributes context:(nullable NSStringDrawingContext *)context NS_AVAILABLE(10_11, 7_0);
     @end
 
-要理解 UsesLineFragmentOrigin，先看看上面两个方法之前的注释：
->注意：所有方法默认绘制一条基准线，限制行数为一行；如果要正确的绘制多行文本，先使用 NSStringDrawingUsesLineFragmentOrigin 参数。
+	要理解 UsesLineFragmentOrigin，先看看上面两个方法之前的注释：
+	>注意：所有方法默认绘制一条基准线，限制行数为一行；如果要正确的绘制多行文本，先使用 NSStringDrawingUsesLineFragmentOrigin 参数。
 
-从这里就可以看懂，这个参数注释所说的 not the base line origin 是哪个线哪个点了。
+	从这里就可以看懂，这个参数注释所说的 not the base line origin 是哪个线哪个点了。
 
-也就是说，想要根据内容计算多行文本的 size，必须要带的就是这个参数。
+	也就是说，想要根据内容计算多行文本的 size，必须要带的就是这个参数。
 
 4. CGRectGetMaxX：Return the rightmost x-value of `rect'：返回rect 的 x 坐标值，在用来在这种一个控件的 frame 计算另外一个 frame 的情况下比较好用，同样还有一个 CGRectGetMaxY。
-
-5. 
