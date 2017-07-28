@@ -29,19 +29,19 @@ itcast 教程，简易微博布局：可变高度cell，frameModel 的使用
 
 	查看源码：
 
-     typedef NS_OPTIONS(NSInteger, NSStringDrawingOptions) {
-        NSStringDrawingUsesLineFragmentOrigin = 1 << 0, // The specified origin is the line fragment origin, not the base line origin
-        NSStringDrawingUsesFontLeading = 1 << 1, // Uses the font leading for calculating line heights
-        NSStringDrawingUsesDeviceMetrics = 1 << 3, // Uses image glyph bounds instead of typographic bounds
-        NSStringDrawingTruncatesLastVisibleLine NS_ENUM_AVAILABLE(10_5, 6_0) = 1 << 5, // Truncates and adds the ellipsis character to the last visible line if the text doesn't fit into the bounds specified. Ignored if NSStringDrawingUsesLineFragmentOrigin is not also set.
-    } NS_ENUM_AVAILABLE(10_0, 6_0);
+     	typedef NS_OPTIONS(NSInteger, NSStringDrawingOptions) {
+        	NSStringDrawingUsesLineFragmentOrigin = 1 << 0, // The specified origin is the line fragment origin, not the base line origin
+       		NSStringDrawingUsesFontLeading = 1 << 1, // Uses the font leading for calculating line heights
+        	NSStringDrawingUsesDeviceMetrics = 1 << 3, // Uses image glyph bounds instead of typographic bounds
+        	NSStringDrawingTruncatesLastVisibleLine NS_ENUM_AVAILABLE(10_5, 6_0) = 1 << 5, // Truncates and adds the ellipsis character to the last visible line if the text doesn't fit into the bounds specified. Ignored if NSStringDrawingUsesLineFragmentOrigin is not also set.
+    	} NS_ENUM_AVAILABLE(10_0, 6_0);
 
-    // NOTE: All of the following methods will default to drawing on a baseline, limiting drawing to a single line.
-    // To correctly draw and size multi-line text, pass NSStringDrawingUsesLineFragmentOrigin in the options parameter.
-    @interface NSString (NSExtendedStringDrawing)
-    - (void)drawWithRect:(CGRect)rect options:(NSStringDrawingOptions)options attributes:(nullable NSDictionary<NSString *, id> *)attributes context:(nullable NSStringDrawingContext *)context NS_AVAILABLE(10_11, 7_0);
-    - (CGRect)boundingRectWithSize:(CGSize)size options:(NSStringDrawingOptions)options attributes:(nullable NSDictionary<NSString *, id> *)attributes context:(nullable NSStringDrawingContext *)context NS_AVAILABLE(10_11, 7_0);
-    @end
+    	// NOTE: All of the following methods will default to drawing on a baseline, limiting drawing to a single line.
+    	// To correctly draw and size multi-line text, pass NSStringDrawingUsesLineFragmentOrigin in the options parameter.
+    	@interface NSString (NSExtendedStringDrawing)
+    	- (void)drawWithRect:(CGRect)rect options:(NSStringDrawingOptions)options attributes:(nullable NSDictionary<NSString *, id> *)attributes context:(nullable NSStringDrawingContext *)context NS_AVAILABLE(10_11, 7_0);
+    	- (CGRect)boundingRectWithSize:(CGSize)size options:(NSStringDrawingOptions)options attributes:(nullable NSDictionary<NSString *, id> *)attributes context:(nullable NSStringDrawingContext *)context NS_AVAILABLE(10_11, 7_0);
+    	@end
 
 	要理解 UsesLineFragmentOrigin，先看看上面两个方法之前的注释：
 	>注意：所有方法默认绘制一条基准线，限制行数为一行；如果要正确的绘制多行文本，先使用 NSStringDrawingUsesLineFragmentOrigin 参数。
